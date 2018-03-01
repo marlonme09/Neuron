@@ -6,15 +6,13 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
+  View,
+  StyleSheet
 } from 'react-native';
-import {StackNavigation} from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import LoginScreen from './screens/LoginScreen';
 
-const ScreenStack = StackNavigation(
+const ScreenStack = StackNavigator(
   {
     Home: {screen: LoginScreen}
   },
