@@ -31,27 +31,32 @@ export default class LoginScreen extends Component<Props>{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between'
   },
   logo: {
     width: 285,
     height: 285,
-    marginTop: 50
+    marginTop: 35,
+    alignItems: 'center'
   },
   buttonLogin: {
+    marginTop: 50,
     backgroundColor: '#2571ab',
-    padding: 15,
-    width: 350
+    width: 400,
+    height: 50
   },
   buttonSignUp: {
     backgroundColor: '#5d8ec8',
-    padding: 15,
-    width: 350
+    width: 400,
+    height: 50
   },
   buttonText: {
     color: 'white',
     fontSize: 18,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 12
   }
 })
