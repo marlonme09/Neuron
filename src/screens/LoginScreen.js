@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {StackNavigator} from 'react-navigation';
 
 import {
   View,
@@ -9,6 +10,15 @@ import {
 } from 'react-native';
 
 export default class LoginScreen extends Component<Props>{
+
+  constructor(props){
+    super(props);
+  }
+
+  goToRegister(){
+    this.props.navigation.navigate('Register');
+  }
+
   render(){
     return (
       <View style={styles.container}>
@@ -20,7 +30,8 @@ export default class LoginScreen extends Component<Props>{
           <Text style={styles.buttonText}>INICIAR SESION</Text>
         </TouchableHighlight>
         <TouchableHighlight
-          style={styles.buttonSignUp}>
+          style={styles.buttonSignUp}
+          onPress={ () => {this.props.navigation.navigate('Register')}}>
           <Text style={styles.buttonText}>REGISTRARSE</Text>
         </TouchableHighlight>
       </View>
