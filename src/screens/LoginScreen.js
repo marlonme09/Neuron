@@ -13,6 +13,7 @@ export default class LoginScreen extends Component<Props>{
 
   constructor(props){
     super(props);
+    this.goToRegister.bind(this);
   }
 
   goToRegister(){
@@ -31,7 +32,7 @@ export default class LoginScreen extends Component<Props>{
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.buttonSignUp}
-          onPress={ () => {this.props.navigation.navigate('Register')}}>
+          onPress={ () => { this.props.navigation.navigate('Register') } }>
           <Text style={styles.buttonText}>REGISTRARSE</Text>
         </TouchableHighlight>
       </View>
