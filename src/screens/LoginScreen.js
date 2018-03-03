@@ -1,13 +1,7 @@
 import React, {Component} from 'react';
 import {StackNavigator} from 'react-navigation';
 
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableHighlight
-} from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground } from 'react-native';
 
 export default class LoginScreen extends Component<Props>{
 
@@ -23,18 +17,20 @@ export default class LoginScreen extends Component<Props>{
   render(){
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={require('./../images/neuron-logo.jpg')}/>
-        <TouchableHighlight
-          style={styles.buttonLogin}>
-          <Text style={styles.buttonText}>INICIAR SESION</Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={styles.buttonSignUp}
-          onPress={ () => { this.props.navigation.navigate('Register') } }>
-          <Text style={styles.buttonText}>REGISTRARSE</Text>
-        </TouchableHighlight>
+        <ImageBackground style={styles.backgroundImage} source={require('./../images/neuron-background.png')}>
+          <Image
+            style={styles.logo}
+            source={require('./../images/neuron-logo.png')}/>
+          <TouchableHighlight
+            style={styles.buttonLogin}>
+            <Text style={styles.buttonText}>INICIAR SESION</Text>
+          </TouchableHighlight>
+          <TouchableHighlight
+            style={styles.buttonSignUp}
+            onPress={ () => { this.props.navigation.navigate('Register') } }>
+            <Text style={styles.buttonText}>REGISTRARSE</Text>
+          </TouchableHighlight>
+        </ImageBackground>
       </View>
     )
   }
@@ -70,5 +66,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 12
+  },
+  backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })

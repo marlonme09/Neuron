@@ -15,9 +15,7 @@ import RegisterScreen from './screens/RegisterScreen';
 
 const ScreenStack = StackNavigator(
   {
-    Home: {screen: LoginScreen}
-  },
-  {
+    Home: {screen: LoginScreen},
     Register: {screen: RegisterScreen}
   },
   {
