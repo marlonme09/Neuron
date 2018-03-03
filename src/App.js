@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import {
+  Platform,
   View,
   StyleSheet
 } from 'react-native';
@@ -25,7 +26,9 @@ const ScreenStack = StackNavigator(
 
 export default class App extends Component<Props> {
   render(){
-    return <ScreenStack/>;
+    return(
+      <ScreenStack/>
+    )
   }
 }
 

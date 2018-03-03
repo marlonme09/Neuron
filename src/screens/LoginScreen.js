@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {StackNavigator} from 'react-navigation';
+//import {StackNavigator} from 'react-navigation';
+//import RegisterScreen from './../screens/RegisterScreen';
 
 import { View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground } from 'react-native';
 
@@ -11,6 +12,7 @@ export default class LoginScreen extends Component<Props>{
   }
 
   goToRegister(){
+    //Alert.alert("Hola pinche putita");
     this.props.navigation.navigate('Register');
   }
 
@@ -32,7 +34,7 @@ export default class LoginScreen extends Component<Props>{
           </TouchableHighlight>
         </ImageBackground>
       </View>
-    )
+    );
   }
 }
 
@@ -72,4 +74,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   }
-})
+});
