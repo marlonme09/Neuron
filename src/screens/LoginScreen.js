@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-import {StackNavigator} from 'react-navigation';
+//import {StackNavigator} from 'react-navigation';
+//import RegisterScreen from './../screens/RegisterScreen';
 
 import {
   View,
   Text,
   Image,
   StyleSheet,
-  TouchableHighlight
+  TouchableHighlight,
+  Alert,
+  Navigator
 } from 'react-native';
 
 export default class LoginScreen extends Component<Props>{
@@ -17,6 +20,7 @@ export default class LoginScreen extends Component<Props>{
   }
 
   goToRegister(){
+    //Alert.alert("Hola pinche putita");
     this.props.navigation.navigate('Register');
   }
 
@@ -32,11 +36,11 @@ export default class LoginScreen extends Component<Props>{
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.buttonSignUp}
-          onPress={ () => { this.props.navigation.navigate('Register') } }>
+          onPress={ () => {this.goToRegister()} }>
           <Text style={styles.buttonText}>REGISTRARSE</Text>
         </TouchableHighlight>
       </View>
-    )
+    );
   }
 }
 
@@ -71,4 +75,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 12
   }
-})
+});

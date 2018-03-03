@@ -9,11 +9,15 @@ import {
 
 
 export default class RegisterScreen extends Component<Props>{
+  constructor(props){
+    super(props);
+  }
+
   render(){
     return(
       <View>
         <Text>Hola mundo</Text>
       </View>
-    )
+    );
   }
 }

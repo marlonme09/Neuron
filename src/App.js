@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import {
+  Platform,
   View,
   StyleSheet
 } from 'react-native';
@@ -15,9 +16,7 @@ import RegisterScreen from './screens/RegisterScreen';
 
 const ScreenStack = StackNavigator(
   {
-    Home: {screen: LoginScreen}
-  },
-  {
+    Home: {screen: LoginScreen},
     Register: {screen: RegisterScreen}
   },
   {
@@ -27,7 +26,9 @@ const ScreenStack = StackNavigator(
 
 export default class App extends Component<Props> {
   render(){
-    return <ScreenStack/>;
+    return(
+      <ScreenStack/>
+    )
   }
 }
 
