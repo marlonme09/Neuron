@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-//import {StackNavigator} from 'react-navigation';
-//import RegisterScreen from './../screens/RegisterScreen';
-
 import { View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground,
-TouchableOpacity  } from 'react-native';
+TouchableOpacity, Modal  } from 'react-native';
+import LoginModal from './../modals/LoginModal';
 
 export default class LoginScreen extends Component<Props>{
 
   constructor(props){
     super(props);
     this.goToRegister.bind(this);
+    this.state = {
+      modalVisible: false
+    }
   }
 
   goToRegister(){
@@ -17,16 +18,25 @@ export default class LoginScreen extends Component<Props>{
     this.props.navigation.navigate('Register');
   }
 
+  showModal(){
+    this.setState({modalVisible:true})
+  }
+
+  hideModal(){
+    this.setState({modalVisible:false})
+  }
+
   render(){
     return (
-      <View style={styles.mainContainer}>
+      <View style={styles.wrapper}>
         <ImageBackground style={styles.backgroundImage} source={require('./../images/neuron-background.png')}>
-        <View style={styles.logoContainer}>
+        <View style={styles.container}>
           <Image
             style={styles.logo}
             source={require('./../images/neuron-logo.png')}/>
           <TouchableHighlight
-            style={styles.buttonLogin}>
+            style={styles.buttonLogin}
+            onPress={this.showModal.bind(this)}>
             <Text style={styles.buttonText}>INICIAR SESION</Text>
           </TouchableHighlight>
           <TouchableHighlight
@@ -62,16 +72,24 @@ export default class LoginScreen extends Component<Props>{
           </TouchableOpacity>
         </View>
         </ImageBackground>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          onRequestClose={() => {this.state.modalVisible}}
+          visible={this.state.modalVisible}>
+          <LoginModal
+            hideModal={this.hideModal.bind(this)}/>
+        </Modal>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  wrapper: {
     flex: 1
   },
-  logoContainer: {
+  container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center' ,
