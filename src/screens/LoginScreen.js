@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 //import {StackNavigator} from 'react-navigation';
 //import RegisterScreen from './../screens/RegisterScreen';
 
-import { View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground,
+TouchableOpacity  } from 'react-native';
 
 export default class LoginScreen extends Component<Props>{
 
@@ -18,8 +19,9 @@ export default class LoginScreen extends Component<Props>{
 
   render(){
     return (
-      <View style={styles.container}>
+      <View style={styles.mainContainer}>
         <ImageBackground style={styles.backgroundImage} source={require('./../images/neuron-background.png')}>
+        <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
             source={require('./../images/neuron-logo.png')}/>
@@ -32,6 +34,33 @@ export default class LoginScreen extends Component<Props>{
             onPress={ () => { this.props.navigation.navigate('Register') } }>
             <Text style={styles.buttonText}>REGISTRARSE</Text>
           </TouchableHighlight>
+        </View>
+        <View style={styles.buttonImagesContainer}>
+          <TouchableOpacity>
+            <Image
+              style={styles.buttonsLogo}
+              source={require('./../images/twitter-logo.png')}
+              />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.buttonsLogo}
+              source={require('./../images/facebook-logo.png')}
+              />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.buttonsLogo}
+              source={require('./../images/google-logo.png')}
+              />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.buttonsLogo}
+              source={require('./../images/linkedin-logo.png')}
+              />
+          </TouchableOpacity>
+        </View>
         </ImageBackground>
       </View>
     );
@@ -39,28 +68,33 @@ export default class LoginScreen extends Component<Props>{
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
+    flex: 1
+  },
+  logoContainer: {
     flex: 1,
-    flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center' ,
+    flexDirection: 'column'
   },
   logo: {
-    width: 285,
-    height: 285,
-    marginTop: 35,
+    width: 250,
+    height: 250,
+    justifyContent: 'center',
     alignItems: 'center'
   },
   buttonLogin: {
     marginTop: 50,
     backgroundColor: '#2571ab',
     width: 400,
-    height: 50
+    height: 50,
+    marginBottom: 2
   },
   buttonSignUp: {
     backgroundColor: '#5d8ec8',
     width: 400,
-    height: 50
+    height: 50,
+    marginTop: 2
   },
   buttonText: {
     color: 'white',
@@ -73,5 +107,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  buttonImagesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  buttonsLogo: {
+    width: 30,
+    height: 30,
+    borderRadius: 5,
+    margin: 3,
+    marginBottom: 10
   }
 });
