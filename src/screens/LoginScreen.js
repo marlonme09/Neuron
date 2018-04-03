@@ -45,6 +45,7 @@ export default class LoginScreen extends Component<Props>{
             <Text style={styles.buttonText}>REGISTRARSE</Text>
           </TouchableHighlight>
         </View>
+        <Text>Conectar con:</Text>
         <View style={styles.buttonImagesContainer}>
           <TouchableOpacity>
             <Image
