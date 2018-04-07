@@ -1,17 +1,6 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
-import t from 'tcomb-form-native';
-
-const Form = t.form.Form;
-
-const User = t.struct({
-  nombre: t.String,
-  apellido: t.String,
-  nombre_usuario: t.String,
-  email: t.String,
-  contraseña: t.String
-});
-
+import { Kaede } from 'react-native-textinput-effects';
 
 export default class RegisterScreen extends Component<Props>{
   constructor(props){
@@ -20,8 +9,26 @@ export default class RegisterScreen extends Component<Props>{
 
   render(){
     return(
-      <View style={styles.container}>
-        <Form type={User}/>
+      <View>
+        <Text>Resgistrarse</Text>
+        <Kaede
+          style={styles.input}
+          label={'Nombre'}
+          labelStyle={styles.styleLabel}
+          inputStyle={styles.styleInput}
+          keyboardType="default"/>
+        <Kaede
+          style={styles.input}
+          label={'Correo'}
+          labelStyle={styles.styleLabel}
+          inputStyle={styles.styleInput}
+          keyboardType="email-address"/>
+        <Kaede
+          style={styles.input}
+          label={'Contraseña'}
+          secureTextEntry= {true}
+          labelStyle={styles.styleLabel}
+          inputStyle={styles.styleInput}/>
       </View>
     );
   }
@@ -30,8 +37,17 @@ export default class RegisterScreen extends Component<Props>{
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    marginTop: 50,
-    padding: 20,
     backgroundColor: '#FFFFFF'
+  },
+  input: {
+    marginTop: 4
+  },
+  styleInput: {
+    color: 'black',
+    backgroundColor: '#a5ceff',
+  },
+  styleLabel: {
+    color: 'white',
+    backgroundColor: '#5d8ec8',
   }
 });
