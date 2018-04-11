@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import { View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground,
 TouchableOpacity, Modal  } from 'react-native';
-import LoginModal from './../modals/LoginModal';
+import LoginModal from './../modales/LoginModal';
 
 export default class LoginScreen extends Component<Props>{
-
   constructor(props){
     super(props);
     this.goToRegister.bind(this);
@@ -14,7 +13,6 @@ export default class LoginScreen extends Component<Props>{
   }
 
   goToRegister(){
-    //Alert.alert("Hola pinche putita");
     this.props.navigation.navigate('Register');
   }
 

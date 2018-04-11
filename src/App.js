@@ -7,15 +7,17 @@
 import React, { Component } from 'react';
 
 import { StackNavigator } from 'react-navigation';
-import LoginScreen from './screens/LoginScreen';
-import RegisterScreen from './screens/RegisterScreen';
+import LoginScreen from './pantallas/Login';
+import RegisterScreen from './pantallas/Registtro';
 
-export default App = StackNavigator(
-  {
-    Home: {screen: LoginScreen},
-    Register: {screen: RegisterScreen}
+export default App = StackNavigator({
+  Home: {
+    screen: LoginScreen
   },
-  {
-    headerMode: 'none'
+  Register: {
+    screen: RegisterScreen
+    navigationOptions: {
+      headerTitle: 'Registrarse',
+    },
   }
-);
+});
