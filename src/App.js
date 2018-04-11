@@ -5,19 +5,12 @@
  */
 
 import React, { Component } from 'react';
+import { Navigation } from './config/router';
 
-import { StackNavigator } from 'react-navigation';
-import LoginScreen from './pantallas/Login';
-import RegisterScreen from './pantallas/Registtro';
-
-export default App = StackNavigator({
-  Home: {
-    screen: LoginScreen
-  },
-  Register: {
-    screen: RegisterScreen
-    navigationOptions: {
-      headerTitle: 'Registrarse',
-    },
+class App extends Component {
+  render() {
+    return<Navigation/>
   }
-});
+}
+
+export default App;
