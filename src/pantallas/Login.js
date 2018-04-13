@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground,
 TouchableOpacity, Modal  } from 'react-native';
 import LoginModal from './../modales/LoginModal';
 
-export default class LoginScreen extends Component<Props>{
+export default class PantLogin extends Component<Props>{
   constructor(props){
     super(props);
     this.goToRegister.bind(this);
@@ -13,7 +13,7 @@ export default class LoginScreen extends Component<Props>{
   }
 
   goToRegister(){
-    this.props.navigation.navigate('Register');
+    this.props.navigation.navigate('Registro');
   }
 
   showModal(){
@@ -39,7 +39,7 @@ export default class LoginScreen extends Component<Props>{
           </TouchableHighlight>
           <TouchableHighlight
             style={styles.buttonSignUp}
-            onPress={ () => { this.props.navigation.navigate('Register') } }>
+            onPress={ () => { this.props.navigation.navigate('Registro') } }>
             <Text style={styles.buttonText}>REGISTRARSE</Text>
           </TouchableHighlight>
         </View>

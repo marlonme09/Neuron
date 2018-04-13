@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { View, Text, StyleSheet, TouchableHighlight, Switch, ImageBackground } from 'react-native';
 import { Kaede } from 'react-native-textinput-effects';
 
-export default class RegisterScreen extends Component<Props>{
+export default class PantRegistro extends Component<Props>{
   constructor(props){
     super(props);
     this.state = {
@@ -44,7 +44,7 @@ export default class RegisterScreen extends Component<Props>{
           </View>
           <TouchableHighlight
             style={styles.buttonSignUp}
-            onPress={ () => { this.props.navigation.navigate('Register') } }>
+            onPress={ () => { this.props.navigation.navigate('Categorias') } }>
             <Text style={styles.buttonText}>SIGUIENTE</Text>
           </TouchableHighlight>
         </ImageBackground>

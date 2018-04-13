@@ -4,20 +4,24 @@
  */
 
  import React from 'react';
- import {StackNavigator} from 'react-navigation';
+ import { StackNavigator } from 'react-navigation';
 
 // Pantallas
- import LoginScreen from './../pantallas/Login';
- import RegisterScreen from './../pantallas/Registro';
+ import PantLogin from './../pantallas/Login';
+ import PantRegistro from './../pantallas/Registro';
+ import PantCategorias from './../pantallas/Categorias';
 
 export const Navigation = StackNavigator({
   Home: {
-    screen: LoginScreen,
+    screen: PantLogin,
     navigationOptions: {
       header: null,
     },
   },
-  Register: {
-    screen: RegisterScreen,
+  Registro: {
+    screen: PantRegistro,
+  },
+  Categorias: {
+    screen: PantCategorias,
   }
 });
