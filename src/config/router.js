@@ -23,5 +23,8 @@ export const Navigation = StackNavigator({
   },
   Categorias: {
     screen: PantCategorias,
-  }
+    navigationOptions: {
+      header: null,
+    },
+  },
 });
