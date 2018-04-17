@@ -16,6 +16,10 @@ export default class PantLogin extends Component<Props>{
     this.props.navigation.navigate('Registro');
   }
 
+  goToMenu(){
+    this.props.navigation.navigate('Menu');
+  }
+
   showModal(){
     this.setState({modalVisible:true})
   }
@@ -39,7 +43,7 @@ export default class PantLogin extends Component<Props>{
           </TouchableHighlight>
           <TouchableHighlight
             style={styles.buttonSignUp}
-            onPress={ () => { this.props.navigation.navigate('Registro') } }>
+            onPress={ () => {this.goToRegister()} }>
             <Text style={styles.buttonText}>REGISTRARSE</Text>
           </TouchableHighlight>
         </View>
@@ -77,7 +81,8 @@ export default class PantLogin extends Component<Props>{
           onRequestClose={() => {this.state.modalVisible}}
           visible={this.state.modalVisible}>
           <LoginModal
-            hideModal={this.hideModal.bind(this)}/>
+            hideModal={this.hideModal.bind(this)}
+            goToMenu={this.goToMenu.bind(this)}/>
         </Modal>
       </View>
     );

@@ -33,7 +33,7 @@ import { View, Text, StyleSheet, TextInput, Image, TouchableHighlight } from 're
                onChangeText={(password) => this.setState({password})}/>
 
              <TouchableHighlight style={styles.btnLogin}
-               onPress={() => {}}>
+               onPress={() => {this.props.goToMenu(), this.props.hideModal()}}>
                <Text style={styles.btnText}>Login</Text>
              </TouchableHighlight>
              <TouchableHighlight style={styles.btnCancelar}

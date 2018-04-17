@@ -10,6 +10,7 @@
  import PantLogin from './../pantallas/Login';
  import PantRegistro from './../pantallas/Registro';
  import PantCategorias from './../pantallas/Categorias';
+ import PantMenu from './../pantallas/Menu';
 
 export const Navigation = StackNavigator({
   Home: {
@@ -27,4 +28,10 @@ export const Navigation = StackNavigator({
       header: null,
     },
   },
+  Menu: {
+    screen: PantMenu,
+    navigationOptions: {
+      header: null
+    }
+  }
 });
