@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import {View, Text, ImageBackground, StyleSheet, Dimensions} from 'react-native';
 import {TabViewAnimated, TabBar, SceneMap} from 'react-native-tab-view';
+import PantInicio from './Inicio';
+import PantDonaciones from './Donaciones';
+import PantMensajes from './Mensajes';
+import PantNotificaciones from './Notificaciones';
+import PantPerfil from './Perfil';
 
 const initialLayout = {
   height: 0,
@@ -17,11 +22,11 @@ export default class PantMenu extends Component<Props>{
   state = {
     index: 0,
     routes: [
-      {key: 'first', title: 'First'},
-      {key: 'second', title: 'Second'},
-      {key: 'third', title: 'Third'},
-      {key: 'fourth', title: 'Fourth'},
-      {key: 'fifth', title: 'Fifth'},
+      {key: 'inicio', title: 'Ini'},
+      {key: 'donaciones', title: 'Don'},
+      {key: 'mensajes', title: 'Men'},
+      {key: 'notificaciones', title: 'Not'},
+      {key: 'perfil', title: 'Per'},
     ],
   };
 
@@ -29,13 +34,28 @@ export default class PantMenu extends Component<Props>{
 
   _renderHeader = props => <TabBar {...props}/>;
 
-  _renderScene = SceneMap({
-    first: FirstRoute,
-    second: SecondRoute,
-    third: ThirdRoute,
-    fourth: FourthRoute,
-    fifth: FifthRoute,
-  });
+  _renderScene = ({ route }) => {
+    switch (route.key) {
+      case 'inicio':
+        return <PantInicio/>;
+        break;
+      case 'donaciones':
+        return <PantDonaciones/>;
+        break;
+      case 'mensajes':
+        return <PantMensajes/>;
+        break;
+      case 'notificaciones':
+        return <PantNotificaciones/>;
+        break;
+      case 'perfil':
+        return <PantPerfil/>;
+        break;
+      default:
+        return <PantInicio/>;
+        break;
+    }
+  }
 
   render(){
     return(
